@@ -20,6 +20,9 @@ constructor(
     private val _postState = mutableStateOf(PostState())
     val postState: State<PostState> = _postState
 
+    init {
+        getPost()
+    }
 
     private fun getPost(){
         viewModelScope.launch {

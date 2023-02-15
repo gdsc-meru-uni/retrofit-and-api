@@ -1,5 +1,6 @@
 package com.hcr.retro_and_api.presentation.screens
 
+import android.util.Log
 import com.hcr.retro_and_api.common.Resource
 import com.hcr.retro_and_api.data.dto.PostResponseItem
 import kotlinx.coroutines.flow.Flow
@@ -18,6 +19,9 @@ constructor(
             emit(Resource.Loading<List<PostResponseItem>>())
 
             val newsList = repo.getPost()
+
+            Log.d("useeCase", newsList.toString())
+            println(newsList)
 
             emit(Resource.Success(newsList))
 
